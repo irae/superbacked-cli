@@ -1,0 +1,4 @@
+{
+  "assets": ["../deps/darwin/arm64", "../node_modules/sharp"],
+  "targets": ["node18-macos-arm64"]
+}
