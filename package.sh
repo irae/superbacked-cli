@@ -11,11 +11,12 @@ printf "%s\n" "Building superbacked-cli…"
 
 npm run build
 
+release_semver=1.0.1
 sharp_semver=0.33.1
 
 release_platform=darwin
 release_arch=arm64
-release_filename=superbacked-cli-$release_platform-$release_arch-1.0.0
+release_filename=superbacked-cli-$release_platform-$release_arch-$release_semver
 release_dir=dist/$release_filename-dir
 release_dmg=dist/$release_filename.dmg
 
@@ -66,7 +67,7 @@ rm $release_dmg
 
 release_platform=darwin
 release_arch=x64
-release_filename=superbacked-cli-$release_platform-$release_arch-1.0.0
+release_filename=superbacked-cli-$release_platform-$release_arch-$release_semver
 release_dir=dist/$release_filename-dir
 release_dmg=dist/$release_filename.dmg
 
@@ -117,7 +118,7 @@ rm $release_dmg
 
 release_platform=linux
 release_arch=arm64
-release_filename=superbacked-cli-$release_platform-$release_arch-1.0.0
+release_filename=superbacked-cli-$release_platform-$release_arch-$release_semver
 release_dir=dist
 
 printf "%s\n" "Packaging ${release_filename}…"
@@ -136,7 +137,7 @@ node_modules/.bin/pkg \
 
 release_platform=linux
 release_arch=x64
-release_filename=superbacked-cli-$release_platform-$release_arch-1.0.0
+release_filename=superbacked-cli-$release_platform-$release_arch-$release_semver
 release_dir=dist
 
 printf "%s\n" "Packaging ${release_filename}…"

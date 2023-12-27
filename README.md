@@ -5,7 +5,7 @@
 ## Usage
 
 ```console
-$ superbacked-cli-darwin-arm64-1.0.0 --help
+$ superbacked-cli-darwin-arm64-1.0.1 --help
 Usage: superbacked-cli [options] [command]
 
 Options:

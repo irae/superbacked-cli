@@ -1,6 +1,6 @@
 {
   "name": "superbacked-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Restore secrets from Superbacked block(s).",
   "engines": {
     "node": ">=16"
