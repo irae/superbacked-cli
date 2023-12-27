@@ -11,6 +11,8 @@ printf "%s\n" "Building superbacked-cli…"
 
 npm run build
 
+sharp_semver=0.33.1
+
 release_platform=darwin
 release_arch=arm64
 release_filename=superbacked-cli-$release_platform-$release_arch-1.0.0
@@ -24,9 +26,9 @@ mkdir $release_dir
 npm uninstall sharp
 
 npm install \
-  --platform=$release_platform \
-  --arch=$release_arch \
-  sharp@0.32.3
+  --cpu=$release_arch \
+  --os=$release_platform \
+  sharp@$sharp_semver
 
 node_modules/.bin/pkg \
   --config pkg/node18-$release_platform-$release_arch.json \
@@ -75,9 +77,9 @@ mkdir $release_dir
 npm uninstall sharp
 
 npm install \
-  --platform=$release_platform \
-  --arch=$release_arch \
-  sharp@0.32.3
+  --cpu=$release_arch \
+  --os=$release_platform \
+  sharp@$sharp_semver
 
 node_modules/.bin/pkg \
   --config pkg/node18-$release_platform-$release_arch.json \
@@ -123,9 +125,9 @@ printf "%s\n" "Packaging ${release_filename}…"
 npm uninstall sharp
 
 npm install \
-  --platform=$release_platform \
-  --arch=$release_arch \
-  sharp@0.32.3
+  --cpu=$release_arch \
+  --os=$release_platform \
+  sharp@$sharp_semver
 
 node_modules/.bin/pkg \
   --config pkg/node18-$release_platform-$release_arch.json \
@@ -142,9 +144,9 @@ printf "%s\n" "Packaging ${release_filename}…"
 npm uninstall sharp
 
 npm install \
-  --platform=$release_platform \
-  --arch=$release_arch \
-  sharp@0.32.3
+  --cpu=$release_arch \
+  --os=$release_platform \
+  sharp@$sharp_semver
 
 node_modules/.bin/pkg \
   --config pkg/node18-$release_platform-$release_arch.json \
@@ -163,6 +165,6 @@ printf "%s\n" "Restoring development environment…"
 
 npm uninstall sharp
 
-npm install sharp@0.32.3
+npm install sharp@$sharp_semver
 
 printf "%s\n" "Done"

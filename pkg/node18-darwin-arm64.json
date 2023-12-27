@@ -1,4 +1,9 @@
 {
-  "assets": ["../deps/darwin/arm64", "../node_modules/sharp"],
+  "assets": [
+    "../deps/darwin/arm64",
+    "../node_modules/@img/sharp-darwin-arm64",
+    "../node_modules/@img/sharp-libvips-darwin-arm64",
+    "../node_modules/sharp"
+  ],
   "targets": ["node18-macos-arm64"]
 }

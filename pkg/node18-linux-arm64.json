@@ -1,4 +1,9 @@
 {
-  "assets": ["../deps/linux/arm64", "../node_modules/sharp"],
+  "assets": [
+    "../deps/linux/arm64",
+    "../node_modules/@img/sharp-linux-arm64",
+    "../node_modules/@img/sharp-libvips-linux-arm64",
+    "../node_modules/sharp"
+  ],
   "targets": ["node18-linux-arm64"]
 }
