@@ -41,7 +41,9 @@ cli
     try {
       console.log(
         chalk.grey(
-          `Do not use Superbacked on computer that isn’t ${chalk.bold(
+          `${chalk.bold.red(
+            "Do not"
+          )} use Superbacked on computer that isn’t ${chalk.bold(
             "air-gapped"
           )} and ${chalk.bold(
             "exclusively used"
@@ -50,7 +52,7 @@ cli
       )
       console.log(
         chalk.grey(
-          `Superbacked, Inc. and its partners cannot be held responsible for lost or stolen secrets and associated data or value. ${chalk.bold.red(
+          `Superbacked, Inc. and its employees, operators, partners and shareholders cannot be held liable for lost or stolen secrets or associated data or value. ${chalk.bold.red(
             "USE AT YOUR OWN RISK"
           )}\n`
         )
