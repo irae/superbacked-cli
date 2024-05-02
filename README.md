@@ -5,7 +5,7 @@
 ## Usage
 
 ```console
-$ superbacked-cli-darwin-arm64-1.0.1 --help
+$ superbacked-cli-darwin-arm64-1.0.2 --help
 Usage: superbacked-cli [options] [command]
 
 Options:
@@ -16,7 +16,7 @@ Commands:
   restore [options]  restore Superbacked block(s)
   help [command]     display help for command
 
-$ superbacked-cli-darwin-arm64-1.0.1 restore --blocks blocks/8def0d84.jpg blocks/a1820486.jpg
+$ superbacked-cli-darwin-arm64-1.0.2 restore --blocks blocks/8def0d84.jpg blocks/a1820486.jpg
 Do not use Superbacked on computer that isn’t air-gapped and exclusively used for secret management unless secret is already present on computer.
 
 Superbacked, Inc. and its employees, operators, partners and shareholders cannot be held liable for lost or stolen secrets or associated data or value. USE AT YOUR OWN RISK

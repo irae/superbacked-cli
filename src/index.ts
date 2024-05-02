@@ -8,7 +8,7 @@ import argon2 from "./utilities/argon2.js"
 import { combineShares } from "./utilities/shamir.js"
 
 cli.name("superbacked-cli")
-cli.version("1.0.1", "--version", "output version")
+cli.version("1.0.2", "--version", "output version")
 
 cli.helpOption("-h, --help", "display help")
 
