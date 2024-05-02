@@ -12,7 +12,7 @@ printf "%s\n" "Building superbacked-cli…"
 npm run build
 
 release_semver=1.0.1
-sharp_semver=0.33.1
+sharp_semver=0.33.3
 
 release_platform=darwin
 release_arch=arm64

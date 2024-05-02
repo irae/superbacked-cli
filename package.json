@@ -21,23 +21,21 @@
   "dependencies": {
     "blockcrypt": "^0.0.1-beta.21",
     "chalk": "^4.1.2",
-    "commander": "^9.5.0",
+    "commander": "^11.1.0",
     "jsqr": "^1.4.0",
     "prompts": "^2.4.2",
-    "sharp": "^0.33.1"
+    "sharp": "^0.33.3"
   },
   "devDependencies": {
-    "@types/node": "^18.19.3",
+    "@types/node": "^18.19.31",
     "@types/prompts": "^2.4.9",
-    "npm-check-updates": "^16.14.12",
+    "npm-check-updates": "^16.14.20",
     "pkg": "^5.8.1",
     "typescript": "^4.9.5"
   },
   "scripts": {
     "code": "tsc -w",
     "build": "rm -fr build/*; tsc",
-    "test": "jest build/test.js",
-    "prepublishOnly": "npm run build",
     "sign-dependencies": "find ./deps -type f -print0 | sort -z | xargs -0 shasum --algorithm 256 > SHA256SUMS; gpg --armor --detach-sig --output SHA256SUMS.asc SHA256SUMS",
     "ncu": "ncu --target minor --upgrade",
     "package": "./package.sh"
