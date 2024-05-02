@@ -24,14 +24,30 @@ printf "%s\n" "Packaging ${release_filename}…"
 
 mkdir $release_dir
 
-npm uninstall sharp
+npm uninstall --no-save sharp
 
 npm install \
-  --cpu=$release_arch \
-  --os=$release_platform \
+  --no-save \
+  --cpu $release_arch \
+  --os $release_platform \
   sharp@$sharp_semver
 
-node_modules/.bin/pkg \
+if [ -z "$(ls -A ./node_modules/@img/sharp-$release_platform-$release_arch)" ]; then
+  echo "Missing @img/sharp-$release_platform-$release_arch dependency"
+  exit 1
+fi
+
+if [ -z "$(ls -A ./node_modules/@img/sharp-libvips-$release_platform-$release_arch)" ]; then
+  echo "Missing @img/sharp-libvips-$release_platform-$release_arch dependency"
+  exit 1
+fi
+
+if [ -z "$(ls -A ./node_modules/sharp)" ]; then
+  echo "Missing sharp dependency"
+  exit 1
+fi
+
+npx pkg \
   --config pkg/node18-$release_platform-$release_arch.json \
   --no-signature \
   --output $release_dir/$release_filename \
@@ -75,14 +91,30 @@ printf "%s\n" "Packaging ${release_filename}…"
 
 mkdir $release_dir
 
-npm uninstall sharp
+npm uninstall --no-save sharp
 
 npm install \
-  --cpu=$release_arch \
-  --os=$release_platform \
+  --no-save \
+  --cpu $release_arch \
+  --os $release_platform \
   sharp@$sharp_semver
 
-node_modules/.bin/pkg \
+if [ -z "$(ls -A ./node_modules/@img/sharp-$release_platform-$release_arch)" ]; then
+  echo "Missing @img/sharp-$release_platform-$release_arch dependency"
+  exit 1
+fi
+
+if [ -z "$(ls -A ./node_modules/@img/sharp-libvips-$release_platform-$release_arch)" ]; then
+  echo "Missing @img/sharp-libvips-$release_platform-$release_arch dependency"
+  exit 1
+fi
+
+if [ -z "$(ls -A ./node_modules/sharp)" ]; then
+  echo "Missing sharp dependency"
+  exit 1
+fi
+
+npx pkg \
   --config pkg/node18-$release_platform-$release_arch.json \
   --no-signature \
   --output $release_dir/$release_filename \
@@ -123,14 +155,30 @@ release_dir=dist
 
 printf "%s\n" "Packaging ${release_filename}…"
 
-npm uninstall sharp
+npm uninstall --no-save sharp
 
 npm install \
-  --cpu=$release_arch \
-  --os=$release_platform \
+  --no-save \
+  --cpu $release_arch \
+  --os $release_platform \
   sharp@$sharp_semver
 
-node_modules/.bin/pkg \
+if [ -z "$(ls -A ./node_modules/@img/sharp-$release_platform-$release_arch)" ]; then
+  echo "Missing @img/sharp-$release_platform-$release_arch dependency"
+  exit 1
+fi
+
+if [ -z "$(ls -A ./node_modules/@img/sharp-libvips-$release_platform-$release_arch)" ]; then
+  echo "Missing @img/sharp-libvips-$release_platform-$release_arch dependency"
+  exit 1
+fi
+
+if [ -z "$(ls -A ./node_modules/sharp)" ]; then
+  echo "Missing sharp dependency"
+  exit 1
+fi
+
+npx pkg \
   --config pkg/node18-$release_platform-$release_arch.json \
   --output $release_dir/$release_filename \
   bin/superbacked-cli.js
@@ -142,14 +190,30 @@ release_dir=dist
 
 printf "%s\n" "Packaging ${release_filename}…"
 
-npm uninstall sharp
+npm uninstall --no-save sharp
 
 npm install \
-  --cpu=$release_arch \
-  --os=$release_platform \
+  --no-save \
+  --cpu $release_arch \
+  --os $release_platform \
   sharp@$sharp_semver
 
-node_modules/.bin/pkg \
+if [ -z "$(ls -A ./node_modules/@img/sharp-$release_platform-$release_arch)" ]; then
+  echo "Missing @img/sharp-$release_platform-$release_arch dependency"
+  exit 1
+fi
+
+if [ -z "$(ls -A ./node_modules/@img/sharp-libvips-$release_platform-$release_arch)" ]; then
+  echo "Missing @img/sharp-libvips-$release_platform-$release_arch dependency"
+  exit 1
+fi
+
+if [ -z "$(ls -A ./node_modules/sharp)" ]; then
+  echo "Missing sharp dependency"
+  exit 1
+fi
+
+npx pkg \
   --config pkg/node18-$release_platform-$release_arch.json \
   --output $release_dir/$release_filename \
   bin/superbacked-cli.js
@@ -164,7 +228,7 @@ cd -
 
 printf "%s\n" "Restoring development environment…"
 
-npm uninstall sharp
+npm uninstall --no-save sharp
 
 npm install sharp@$sharp_semver
 
